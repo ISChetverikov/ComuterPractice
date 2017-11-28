@@ -1,0 +1,87 @@
+Microsoft (R) Macro Assembler Version 14.11.25547.0	    11/24/17 23:38:29
+source.asm						     Page 1 - 1
+
+
+				.686
+				.MODEL STDCALL, FLAT
+				.STACK
+ 00000000			.DATA 
+ 00000000			.CODE
+
+ 00000000			_func_asm PROC
+
+ 00000000  55				push ebp
+ 00000001  8B EC			mov ebp, esp
+					
+ 00000003  8B 45 04			mov eax, [ebp+4] 
+					;mov al, z;
+					;add ax, 7d;
+				;
+					;mov dl, 7d;
+					;imul dl;  
+				;
+					;mov dx, y;
+					;sub ax, dx;
+				;
+					;push ax;
+				;
+					;mov al, x;
+					;mov dl, 3d;
+					;imul dl;
+					;sub ax, 1d;
+				;
+					;pop cx;
+				;
+					;xchg cx, ax;
+					;xor dx, dx;
+				;
+					;idiv cx;
+				;
+					;mov result, ax;
+				;
+ 00000006  5D				pop ebp
+
+ 00000007  C3				retn
+
+ 00000008			_func_asm ENDP
+
+				END
+Microsoft (R) Macro Assembler Version 14.11.25547.0	    11/24/17 23:38:29
+source.asm						     Symbols 2 - 1
+
+
+
+
+Segments and Groups:
+
+                N a m e                 Size     Length   Align   Combine Class
+
+FLAT . . . . . . . . . . . . . .	GROUP
+STACK  . . . . . . . . . . . . .	32 Bit	 00000400 Para	  Stack	  'STACK'	 
+_DATA  . . . . . . . . . . . . .	32 Bit	 00000000 Para	  Public  'DATA'	
+_TEXT  . . . . . . . . . . . . .	32 Bit	 00000008 Para	  Public  'CODE'	
+
+
+Procedures, parameters, and locals:
+
+                N a m e                 Type     Value    Attr
+
+_func_asm  . . . . . . . . . . .	P Near	 00000000 _TEXT	Length= 00000008 Public STDCALL
+
+
+Symbols:
+
+                N a m e                 Type     Value    Attr
+
+@CodeSize  . . . . . . . . . . .	Number	 00000000h   
+@DataSize  . . . . . . . . . . .	Number	 00000000h   
+@Interface . . . . . . . . . . .	Number	 00000003h   
+@Model . . . . . . . . . . . . .	Number	 00000007h   
+@code  . . . . . . . . . . . . .	Text   	 _TEXT
+@data  . . . . . . . . . . . . .	Text   	 FLAT
+@fardata?  . . . . . . . . . . .	Text   	 FLAT
+@fardata . . . . . . . . . . . .	Text   	 FLAT
+@stack . . . . . . . . . . . . .	Text   	 FLAT
+
+	   0 Warnings
+	   0 Errors
