@@ -1,0 +1,19 @@
+
+	/*srand(time(NULL));
+	int n = 100;
+	for (int i = 0; i < n; i++)
+	{
+		char z = 127 - rand() % 256;
+		char x = 127 - rand() % 256;
+		short int y = 32767 - rand() % 65536;
+		printf_s("%d:%d %d %d", i, x, y, z);
+
+		if (func(x, y, z) == func_asm(x, y, z)) {
+			printf_s(" ++++++++\n");
+		}
+		else
+		{
+			printf_s("\n");
+		}
+		
+	}*/
