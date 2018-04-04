@@ -7,7 +7,7 @@ short int func_asm(char x, short int y, char z) {
 	_asm {
 
 		mov al, x		// x в al
-		cbw
+		cbw				// расширение до слова
 		mov bx, 3d
 		imul bx			// умножаем ax на 3
 		dec ax			// уменьшаем ax на 1
