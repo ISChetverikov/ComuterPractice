@@ -2,25 +2,29 @@
  
 int main() {
 
-	char x1 = 0, x2 = 0, x3 = 0, x4 = 0;
+	char x[4];
 
 	printf("Please input four digits:\t");
-	x1 = getc(stdin);
-	x2 = getc(stdin);
-	x3 = getc(stdin);
-	x4 = getc(stdin);
+	for (int i = 0; i < 4; i++)
+	{
+		x[i] = getc(stdin);
+		if (x[i] < '0' || x[i] > '9') {
+			printf_s("\nPlease input only digits!\n");
+			return;
+		}
+	}
 
 	__asm {
 
-		mov al, x1;
+		mov al, x[0];
 		sub al, 30h;
-		mov bl, x4;
+		mov bl, x[3];
 		sub bl, 30h;
 
 		mul bl;
 		mov dx, ax;
 
-		mov al, x3;
+		mov al, x[2];
 		sub al, 30h;
 		cbw;
 
@@ -30,17 +34,22 @@ int main() {
 		cmp ax, 7h;
 		jg EXIT
 
-		add x3, 2;
+		add x[2], 2;
 		jmp EXIT
 	
 	ELSE:
-		mov x1, 39h;
-		mov x2, 39h;
+		mov x[0], 39h;
+		mov x[1], 39h;
 
 	EXIT:
 	}
 
 	printf("\nResult:\t\t\t\t");
-	printf("%c%c%c%c\n\n", x1, x2, x3, x4);
+	for (int i = 0; i < 4; i++)
+	{
+		printf("%c", x[i]);
+	}
+	printf("\n");
+
 	return 0;
 }
