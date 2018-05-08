@@ -12,16 +12,18 @@ int main()
 	char l = sizeof(B);
 	char count = 0;
 
+	printf("\nArray A (%d): \n", count);
 	for (int i = 0; i < SIZE; i++)
 	{
 		printf("%d\t", A[i]);
 	}
 
 	_asm {
+		push l;
 		lea esi, A;
 		lea edi, B;
 		lea edx, C;
-		mov cl, l;
+		pop cl;
 
 	LOOP2:
 
@@ -48,11 +50,11 @@ int main()
 		jne LOOP2;
 	}
 
-	printf("\nArray B (%d): \n", count);
+	printf("\n\nArray B (%d): \n", count);
 	for (int i = 0; i < l; i++)
 		printf("%d\t", B[i]);
 
-	printf("\nArray C: \n");
+	printf("\n\nArray C: \n");
 	for (int i = 0; i < count; i++)
 		printf("%p\t", C[i]);
 
